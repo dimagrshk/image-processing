@@ -49,7 +49,6 @@ def framing():
 ### main
 mk_dirRaw_frame(path_raw)
 mk_dirRaw_frame(path_insert)
-#subprocess.call('ffmpeg -i ' + str(path_inputVideo) + ' -r 25 -f image2 ' + path_raw +'/images%01d.jpg', shell = True)
 framing()
 insertion() #### insertion picutre in frames
 subprocess.call('ffmpeg -f image2 -r 22 -i ' + path_insert + '/out_images%01d.jpg -vcodec mpeg4 -y movie2.mp4', shell = True) #### Creating video
