@@ -10,7 +10,7 @@ import subprocess
 
 path_inputVideo = sys.argv[1]
 path_toImage = sys.argv[2]
-#x_axis, y_axis =
+x_axis, y_axis = sys.argv[3], sys.argv[4]
 path_raw = 'raw_frame'
 path_insert = "insert_frame"
 
@@ -26,7 +26,7 @@ def insertion():
     img = Image.open(str(path_toImage), 'r')
     for i in range(1, directory(path_raw, '.jpg') + 1):
         background = Image.open(path_raw +'/images' + str(i) + '.jpg', 'r')
-        offset = (1, 1)
+        offset = (int(x_axis), int(y_axis))
         background.paste(img, offset)
         background.save(path_insert + '/out_images' + str(i) + '.jpg')
 
