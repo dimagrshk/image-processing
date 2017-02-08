@@ -28,12 +28,10 @@ def insertion():
     size_w_i, size_h_i = img.size[0], img.size[1]
     for k in range(1, directory(path_raw, '.jpg') + 1):
         background = Image.open(path_raw +'/images' + str(k) + '.jpg', 'r')
-        #offset = (int(x_axis), int(y_axis))
         pix_bg = background.load()
         for i in range(size_w_i):
             for j in range(size_h_i):
                 pix_bg[i + x_axis, j + y_axis]=  pix_im[i, j]
-        #background.paste(img, offset)
         background.save(path_insert + '/out_images' + str(k) + '.jpg')
 
 def directory(path, extension):
